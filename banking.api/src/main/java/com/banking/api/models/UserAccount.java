@@ -44,4 +44,7 @@ public class UserAccount {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "trans_id", referencedColumnName = "id")
     private List<UserAccountTransactions> transactions = new ArrayList<>();
+
+    public UserAccount(String fromAccountNumber, BigDecimal bigDecimal) {
+    }
 }

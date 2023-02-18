@@ -12,11 +12,11 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionRequest {
-    @NotNull(message = "account number cannot be null")
-    @NotBlank(message = "account number must be provided")
-    private String accountNumber;
     private BigDecimal amount;
     private String narration = "";
     private String fromAccountNumber;
     private String toAccountNumber;
+
+    public TransactionRequest(String fromAccountNumber, String toAccountNumber, BigDecimal amount) {
+    }
 }

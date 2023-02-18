@@ -18,7 +18,7 @@ public class UserAccountTransactions {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long id;
+    private Long transactionId;
     @Column(name = "transaction_date")
     private String transactionDate;
     @Column(name = "transaction_type")
@@ -33,4 +33,7 @@ public class UserAccountTransactions {
     private String fromAccountNumber;
     @Column(name = "to_account_number")
     private String toAccountNumber;
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private UserAccount account;
 }

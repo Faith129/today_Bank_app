@@ -12,4 +12,6 @@ public class ServiceException extends RuntimeException {
         this.httpCode = httpCode;
         this.timestamp = timestamp;
     }
+
+
 }

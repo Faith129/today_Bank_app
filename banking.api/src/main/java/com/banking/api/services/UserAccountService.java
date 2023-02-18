@@ -1,20 +1,20 @@
 package com.banking.api.services;
 
-import com.banking.api.dto.Request.AccountRequest;
-//import com.banking.api.dto.Request.BankAccountRequest;
-//import com.banking.api.dto.Request.CustomerRequest;
-import com.banking.api.dto.Request.BankAccountRequest;
+;
+import com.banking.api.dto.Request.UserAccountRequest;
 import com.banking.api.dto.Request.TransactionRequest;
 import com.banking.api.dto.Response.ServiceResponse;
-import com.banking.api.models.UserAccount;
+import com.banking.api.models.UserAccountTransactions;
 
 import javax.security.auth.login.AccountNotFoundException;
+import java.util.List;
+import java.util.Optional;
 
 public interface UserAccountService {
-    ServiceResponse createAccount(AccountRequest accountRequest);
+    List<ServiceResponse> createAccount(UserAccountRequest accountRequest);
     ServiceResponse transfer(TransactionRequest transferRequest) throws AccountNotFoundException;
-    ServiceResponse getBalance(String accountNumber);
-    ServiceResponse getStatement(String accountNumber);
-    ServiceResponse createCustomerWithAccounts(BankAccountRequest accountRequest);
-    ServiceResponse getTransferHistory(Long id);
+    ServiceResponse getBalances(String accountNumber);
+    //ServiceResponse getTransferHistory(Long id);
+  //  List<UserAccountTransactions> getTransferHistory(Long id);
+    Optional<UserAccountTransactions> getTransferHistoryFromTransaction(Long transactionId);
 }
